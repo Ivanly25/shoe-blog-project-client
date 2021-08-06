@@ -1,7 +1,7 @@
 // user require with a reference to bundle the file and use it in this file
-// var example = require('./example');
+// const userEvents = require('./user')
 
-import 'bootstrap'
+// import 'bootstrap'
 
 // allows usage of new JS features
 require('babel-polyfill')
