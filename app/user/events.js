@@ -51,7 +51,13 @@ const onCreateShoe = function (event) {
     .then(ui.onCreateShoeSuccess)
     .catch(ui.onCreateShoeFailure)
 }
-
+// all shoes
+const onReadShoes = function (event) {
+  event.preventDefault()
+  api.readShoe.index()
+    .then(ui.onReadShoesSuccess)
+    .catch(ui.onReadShoesFailure)
+}
 const onReadShoe = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -59,7 +65,6 @@ const onReadShoe = function (event) {
     .then(ui.onReadShoeSuccess)
     .catch(ui.onReadShoeFailure)
 }
-
 const onUpdateShoe = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -85,5 +90,7 @@ module.exports = {
   onCreateShoe,
   onReadShoe,
   onUpdateShoe,
-  onDeleteShoe
+  onDeleteShoe,
+  onReadShoes
+
 }

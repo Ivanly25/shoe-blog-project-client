@@ -30,6 +30,8 @@ const signOut = function () {
     }
   })
 }
+// change password
+// PATCH
 const changePassword = function (data) {
   return $.ajax({
     method: 'PATCH',
@@ -38,6 +40,7 @@ const changePassword = function (data) {
     headers: { Authorization: `Bearer ${store.user.token}` }
   })
 }
+// create shoe
 const createShoe = function (data) {
   return $.ajax({
     method: 'POST',
@@ -48,7 +51,16 @@ const createShoe = function (data) {
     }
   })
 }
-
+// read shoes
+// get all shoes
+const readShoes = function () {
+  return $.ajax({
+    url: config.apiUrl + '/shoes',
+    method: 'GET'
+  })
+}
+// read shoe
+// get one shoe
 const readShoe = function (data) {
   return $.ajax({
     method: 'GET',
@@ -60,7 +72,8 @@ const readShoe = function (data) {
 
   })
 }
-
+// update shoe
+// PATCH
 const updateShoe = function (data, id) {
   return $.ajax({
     method: 'PATCH',
@@ -71,7 +84,8 @@ const updateShoe = function (data, id) {
     }
   })
 }
-
+// delete shoe
+// DELETE
 const deleteShoe = function (id) {
   return $.ajax({
     method: 'DELETE',
@@ -90,5 +104,6 @@ module.exports = {
   createShoe,
   readShoe,
   updateShoe,
-  deleteShoe
+  deleteShoe,
+  readShoes
 }

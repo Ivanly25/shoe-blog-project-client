@@ -12,9 +12,10 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
  <body>
+
       <h1>Shoe Finder.</h1>
       <h2>Discover all sorts of shoes from all around the world!</h2>
-      <!--<img src="758634BA-D02B-45EB-B792-167D93E240E4.jpg" width="460" height="345">-->
+     <img src="public/bigShoe.jpeg" class="center">
       <form id="sign-up">
         <h3>Make an Account.</h3>
         <label> Email:</label>
@@ -52,10 +53,10 @@
         <br>
 
         <div class="container">
-        <button id="create-shoe" type="submit" class="btn btn-danger">CREATE</button>
-        <button id="read-shoe" type="submit" class="btn btn-danger">READ</button>
-        <button id="update-shoe" type="submit" class="btn btn-danger">UPDATE</button>
-        <button id="delete-shoe" type="submit" class="btn btn-danger">DELETE</button>
+        <button id="create-shoe" type="submit" class="btn btn-primary">CREATE</button>
+        <button id="read-shoe" type="submit" class="btn btn-primary">READ</button>
+        <button id="update-shoe" type="submit" class="btn btn-primary">UPDATE</button>
+        <button id="delete-shoe" type="submit" class="btn btn-primary">DELETE</button>
         </div>
       <br>
           <form id="Create">
@@ -71,8 +72,6 @@
       <br>
       <form id="Read">
         <h3>Find a Shoe.</h3>
-        <label> Shoe name:</label>
-        <input name="credentials[name]" type="text">
         <label>Shoe ID:</label>
         <input name="credential[ID]" type="text">
         <input type="submit" value="Find Shoe!">
@@ -80,6 +79,8 @@
       <br>
       <form id="Update">
         <h3>Update a Shoe.</h3>
+        <label>Shoe ID:</label>
+        <input name="credential[ID]" type="text">
         <label> Brand:</label>
         <input name="credentials[Brand]" type="text">
         <label> Model:</label>
@@ -95,8 +96,10 @@
           <input name="credentials[Id]" type="text">
           <input type="submit" value="Delete Shoe!">
         </form>
+        <br>
+        <br>
       <div class="footer">
-        <p>Ivan Ly</p>
+        <p>This website was created by Ivan Ly</p>
       </div>
    </body>
 </html>
