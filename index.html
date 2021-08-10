@@ -17,27 +17,38 @@
       <h2>Discover all sorts of shoes from all around the world!</h2>
      <img src="public/bigShoe.jpeg" class="center">
      <br>
+      <div class="register-login">
       <form id="sign-up">
         <h3>Make an Account.</h3>
-        <label> Email:</label>
-        <input name="credentials[email]" type="email">
-        <label>Password:</label>
-        <input name="credentials[password]" type="password">
-        <label>Password Confirmation:</label>
-        <input name="credentials[password_confirmation]" type="password">
-        <input type="submit" value="Sign up">
+        <div class="mb-3">
+        <label class="form-label"> Email:</label>
+        <input class="form-control" name="credentials[email]" type="email">
+        </div>
+        <div class="mb-3">
+        <label class="form-label">Password:</label>
+        <input class="form-control" name="credentials[password]" type="password">
+        </div>
+        <div class="mb-3">
+        <label class="form-label">Password Confirmation:</label>
+        <input class="form-control" name="credentials[password_confirmation]" type="password">
+        <input class="form-control" type="submit" value="Sign up">
+        </div>
       </form>
       <br>
       <form id="sign-in">
         <h3>Log into Account.</h3>
-        <label> Email:</label>
-        <input name="credentials[email]" type="email">
-        <label>Password:</label>
-        <input name="credentials[password]" type="password">
-        <input type="submit" value="Sign In">
+        <div class="mb-3">
+        <label class="form-label"> Email:</label>
+        <input class="form-control" name="credentials[email]" type="email">
+        </div>
+        <div class="mb-3">
+        <label class="form-label">Password:</label>
+        <input class="form-control" name="credentials[password]" type="password">
+        <input class="form-control" type="submit" value="Sign In">
+        </div>
       </form>
       <br>
-
+    </div>
       <button id="sign-out">Sign Out</button>
       <br>
 

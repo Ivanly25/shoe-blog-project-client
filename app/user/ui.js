@@ -40,6 +40,7 @@ const onSignOutSuccess = () => {
   $('#delete-shoe').hide()
   $('.btn').hide()
   $('#find').hide()
+  $('#shoe_list').hide()
 }
 const onSignOutFailure = () => {
   $('#message').text('Shoe Finder Sign out failure')
@@ -80,6 +81,7 @@ const onReadShoesSuccess = (response) => {
   $('#shoe_list').html(shoesHtml)
   $('#delete-shoe').show()
   $('#update-shoe').show()
+  $('#shoe_list').show()
 }
 
 const onReadShoesFailure = () => {

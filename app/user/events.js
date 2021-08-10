@@ -87,7 +87,7 @@ const onDeleteShoe = function (event) {
     .then(ui.onReadShoesSuccess)
     .catch(ui.onReadShoesFailure)
     .then(ui.onDeleteShoeSuccess)
-    .then(ui.onDeleteShoeFailure)
+    .catch(ui.onDeleteShoeFailure)
 }
 // shows form for button that is clicked on
 const showForm = function (event) {
