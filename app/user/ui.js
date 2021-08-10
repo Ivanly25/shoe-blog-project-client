@@ -40,7 +40,6 @@ const onSignOutSuccess = () => {
   $('#delete-shoe').hide()
   $('.btn').hide()
   $('#find').hide()
-  $('.ul').hide()
 }
 const onSignOutFailure = () => {
   $('#message').text('Shoe Finder Sign out failure')
