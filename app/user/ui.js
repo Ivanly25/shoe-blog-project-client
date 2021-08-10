@@ -14,12 +14,15 @@ const onSignUpFailure = () => {
 }
 
 const onSignInSuccess = (response) => {
-  $('#message').text(`Thank you for signing in to Shoe Finder! ${response.user.email}`)
+  $('#message').text('Thank you for signing in to Shoe Finder!')
   store.user = response.user
   $('#sign-in').trigger('reset')
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#sign-out').show()
+  $('#change-password').show()
+  $('.btn').show()
+  $('#find').show()
 }
 const onSignInFailure = () => {
   $('#message').text('Sign in failure')
@@ -30,6 +33,14 @@ const onSignOutSuccess = () => {
   $('#sign-in').show()
   $('#sign-up').show()
   $('#sign-out').hide()
+  $('#change-password').hide()
+  $('#create-shoe').hide()
+  $('#read-shoes').hide()
+  $('#update-shoe').hide()
+  $('#delete-shoe').hide()
+  $('.btn').hide()
+  $('#find').hide()
+  $('.ul').hide()
 }
 const onSignOutFailure = () => {
   $('#message').text('Shoe Finder Sign out failure')
@@ -41,28 +52,43 @@ const onChangePasswordSuccess = () => {
 const onChangePasswordFailure = () => {
   $('#message').text('Password Change Failed')
 }
-
+// shoe section of ui`s
 const onCreateShoeSuccess = (res) => {
-  $('#create-shoe').trigger('reset')
   $('#message').text('Create shoe was successful')
-  store.shoe = res.shoe
-  console.log(res)
+  $('#create-shoe').trigger('reset')
 }
 const onCreateShoeFailure = () => {
   $('#message').text('Create shoe was not successful')
 }
 
-const onReadShoeSuccess = (res) => {
-  $('#read-shoe').trigger('reset')
-  $('#message').text('Read shoe was successful')
-  store.shoe = res.shoe
+const onReadShoesSuccess = (response) => {
+  const shoes = response.shoes
+  $('#message').text('Show shoes Success')
+  // look through shoes to look at each index
+  const shoesHtml = shoes.map((shoe) => {
+    // create html to display each individual shoe
+    const htmlString = `
+      <li>
+      id: ${shoe._id}
+      brand: ${shoe.brand}
+      model: ${shoe.model}
+      price: ${shoe.price}
+      </li>
+    `
+    return htmlString
+  })
+  // put html in dom tree
+  $('#shoe_list').html(shoesHtml)
+  $('#delete-shoe').show()
+  $('#update-shoe').show()
 }
-const onReadShoeFailure = () => {
+
+const onReadShoesFailure = () => {
   $('#message').text('Read shoe was not successful')
 }
 
 const onUpdateShoeSuccess = (res) => {
-  $('#messaging').text('Your shoe has been')
+  $('#messaging').text('Your shoe has been updated')
   $('#update-shoe').trigger('reset')
 }
 
@@ -90,8 +116,8 @@ module.exports = {
   // shoe module exports
   onCreateShoeSuccess,
   onCreateShoeFailure,
-  onReadShoeSuccess,
-  onReadShoeFailure,
+  onReadShoesSuccess,
+  onReadShoesFailure,
   onUpdateShoeSuccess,
   onUpdateShoeFailure,
   onDeleteShoeSuccess,

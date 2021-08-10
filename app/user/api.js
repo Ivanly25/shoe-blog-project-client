@@ -56,29 +56,21 @@ const createShoe = function (data) {
 const readShoes = function () {
   return $.ajax({
     url: config.apiUrl + '/shoes',
-    method: 'GET'
-  })
-}
-// read shoe
-// get one shoe
-const readShoe = function (data) {
-  return $.ajax({
     method: 'GET',
-    data,
-    url: config.apiUrl + '/shoes',
     headers: {
       Authorization: `Bearer ${store.user.token}`
     }
-
   })
 }
+
 // update shoe
 // PATCH
-const updateShoe = function (data, id) {
+const updateShoe = function (id, data) {
+  // console.log('hello')
   return $.ajax({
     method: 'PATCH',
     data,
-    url: config.apiUrl + 'shoes/' + id,
+    url: config.apiUrl + '/shoes/' + id,
     headers: {
       Authorization: `Bearer ${store.user.token}`
     }
@@ -89,7 +81,7 @@ const updateShoe = function (data, id) {
 const deleteShoe = function (id) {
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + 'shoes/' + id,
+    url: config.apiUrl + '/shoes/' + id,
     headers: {
       Authorization: `Bearer ${store.user.token}`
     }
@@ -102,7 +94,6 @@ module.exports = {
   signOut,
   changePassword,
   createShoe,
-  readShoe,
   updateShoe,
   deleteShoe,
   readShoes

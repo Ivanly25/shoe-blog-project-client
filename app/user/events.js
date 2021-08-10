@@ -44,32 +44,36 @@ const onChangePassword = function (event) {
     .then(ui.onChangePasswordSuccess)
     .catch(ui.onChangePasswordFailure)
 }
+// create shoe
 const onCreateShoe = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.createShoe(data)
+  api
+    .createShoe(data)
+    .then(api.readShoes)
+    .then(ui.onReadShoesSuccess)
+    .catch(ui.onReadShoesFailure)
     .then(ui.onCreateShoeSuccess)
     .catch(ui.onCreateShoeFailure)
 }
 // all shoes
 const onReadShoes = function (event) {
   event.preventDefault()
-  api.readShoe.index()
+  api.readShoes()
     .then(ui.onReadShoesSuccess)
     .catch(ui.onReadShoesFailure)
 }
-const onReadShoe = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.readShoe(data)
-    .then(ui.onReadShoeSuccess)
-    .catch(ui.onReadShoeFailure)
-}
+
 const onUpdateShoe = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(data)
   const id = data.shoe.id
-  api.updateShoe(data, id)
+  api
+    .updateShoe(id, data)
+    .then(api.readShoes)
+    .then(ui.onReadShoesSuccess)
+    .catch(ui.onReadShoesFailure)
     .then(ui.onUpdateShoeSuccess)
     .catch(ui.onUpdateShoeFailure)
 }
@@ -77,9 +81,41 @@ const onUpdateShoe = function (event) {
 const onDeleteShoe = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  api.deleteShoe(data.shoe.id)
+  api
+    .deleteShoe(data.shoe.id)
+    .then(api.readShoes)
+    .then(ui.onReadShoesSuccess)
+    .catch(ui.onReadShoesFailure)
     .then(ui.onDeleteShoeSuccess)
     .then(ui.onDeleteShoeFailure)
+}
+// shows form for button that is clicked on
+const showForm = function (event) {
+  const btnId = $(event.target).attr('id')
+  if (btnId === 'create') {
+    $('#create-shoe').show()
+    $('#read-shoes').hide()
+    $('#update-shoe').hide()
+    $('#delete-shoe').hide()
+  }
+  if (btnId === 'read') {
+    $('#read-shoes').show()
+    $('#update-shoe').hide()
+    $('#delete-shoe').hide()
+    $('#create-shoe').hide()
+  }
+  if (btnId === 'update') {
+    $('#update-shoe').show()
+    $('#create-shoe').hide()
+    $('#delete-shoe').hide()
+    $('#read-shoes').hide()
+  }
+  if (btnId === 'delete') {
+    $('#delete-shoe').show()
+    $('#read-shoes').hide()
+    $('#create-shoe').hide()
+    $('#update-shoe').hide()
+  }
 }
 
 module.exports = {
@@ -88,9 +124,9 @@ module.exports = {
   onSignOut,
   onChangePassword,
   onCreateShoe,
-  onReadShoe,
   onUpdateShoe,
   onDeleteShoe,
-  onReadShoes
+  onReadShoes,
+  showForm
 
 }

@@ -13,9 +13,10 @@
     </head>
  <body>
 
-      <h1>Shoe Finder.</h1>
+      <h1>---Shoe Finder---</h1>
       <h2>Discover all sorts of shoes from all around the world!</h2>
      <img src="public/bigShoe.jpeg" class="center">
+     <br>
       <form id="sign-up">
         <h3>Make an Account.</h3>
         <label> Email:</label>
@@ -53,51 +54,56 @@
         <br>
 
         <div class="container">
-        <button id="create-shoe" type="submit" class="btn btn-primary">CREATE</button>
-        <button id="read-shoe" type="submit" class="btn btn-primary">READ</button>
-        <button id="update-shoe" type="submit" class="btn btn-primary">UPDATE</button>
-        <button id="delete-shoe" type="submit" class="btn btn-primary">DELETE</button>
+        <button id="create" type="submit" class="btn btn-primary">CREATE</button>
+        <button id="read" type="submit" class="btn btn-primary">READ</button>
+        <button id="update" type="submit" class="btn btn-primary">UPDATE</button>
+        <button id="delete" type="submit" class="btn btn-primary">DELETE</button>
         </div>
       <br>
-          <form id="Create">
+          <form id="create-shoe" class= "form">
+
             <h3>Create Shoe.</h3>
             <label> Brand:</label>
-            <input name="credentials[Brand]" type="text">
+            <input name="shoe[brand]" type="text">
             <label> Model:</label>
-            <input name="credentials[Model]" type="text">
-            <label>Resale Price:</label>
-            <input name="credentials[Price]" type="text">
+            <input name="shoe[model]" type="text">
+            <label>Price:</label>
+            <input name="shoe[price]" type="text">
             <input type="submit" value="Create Shoe!">
           </form>
       <br>
-      <form id="Read">
-        <h3>Find a Shoe.</h3>
-        <label>Shoe ID:</label>
-        <input name="credential[ID]" type="text">
-        <input type="submit" value="Find Shoe!">
-      </form>
+          <div id="find">
+        <h3>Find all shoes.</h3>
+        <label>Click here</label>
+        <input type="button" id="read-shoes" value="Find Shoe!">
+          </div>
       <br>
-      <form id="Update">
+      <form id="update-shoe" class= "form">
         <h3>Update a Shoe.</h3>
         <label>Shoe ID:</label>
-        <input name="credential[ID]" type="text">
+        <input name="shoe[id]" type="text">
         <label> Brand:</label>
-        <input name="credentials[Brand]" type="text">
+        <input name="shoe[brand]" type="text">
         <label> Model:</label>
-        <input name="credentials[Model]" type="text">
-        <label>Resale Price:</label>
-        <input name="credentials[Price]" type="text">
+        <input name="shoe[model]" type="text">
+        <label> Price:</label>
+        <input name="shoe[price]" type="text">
         <input type="submit" value="Update Shoe!">
       </form>
         <br>
-        <form id="Delete">
+        <form id="delete-shoe" class= "form">
           <h3>Delete a Shoe.</h3>
           <label> Shoe ID:</label>
-          <input name="credentials[Id]" type="text">
+          <input name="shoe[id]" type="text">
           <input type="submit" value="Delete Shoe!">
         </form>
         <br>
         <br>
+
+      <ul id="shoe_list"></ul>
+      <br>
+      <br>
+      <br>
       <div class="footer">
         <p>This website was created by Ivan Ly</p>
       </div>
