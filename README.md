@@ -74,7 +74,7 @@ Include an image (or a link to image) below.
 <https://imgur.com/76t83Zi>
 User has many Shoes
 Shoe belongs to User
-Shoe
+user can updat eand delete their shoe collection
 
 brand : string
 model : string
