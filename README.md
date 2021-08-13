@@ -15,6 +15,7 @@ What is your project idea?  How did you come up with it? Why? Who would use it?
 ```md
 My project idea is to create a shoe blog where a  user can sign up/ sign in /sign out and change password.
 In this project i will be creating and building a full-stack application, i will be building my api, and Build a single-page application with basic user authentication like sign up, sign in, sign out, change password that interacts with the custom API that i built. This app will be able to create, read, update, and delete data in a database.
+In this app users will be abel to create update view and delete their shoes/ resources
 ```
 
 ## Write between 3-5 user stories
