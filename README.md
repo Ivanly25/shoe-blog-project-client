@@ -70,7 +70,8 @@ These are the diagrams that show how your resources are related to one another
 Include an image (or a link to image) below.
 
 ```md
-![ERD](https://imgur.com/76t83Zi)
+![ERD]
+https://imgur.com/76t83Zi
 User has many Shoes
 Shoe belongs to User
 Shoe
