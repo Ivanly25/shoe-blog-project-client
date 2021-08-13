@@ -37,7 +37,7 @@ As a signed in user, I can delete a shoe
 Please create a wireframe of your planned front end.
 
 ```md
-[image](https://imgur.com/f48cw1u)
+![image][https://imgur.com/f48cw1u]
 
 
 Logged Out
@@ -70,7 +70,7 @@ These are the diagrams that show how your resources are related to one another
 Include an image (or a link to image) below.
 
 ```md
-[ERD](https://imgur.com/76t83Zi)
+![ERD](https://imgur.com/76t83Zi)
 User has many Shoes
 Shoe belongs to User
 Shoe
