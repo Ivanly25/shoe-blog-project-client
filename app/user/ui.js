@@ -101,6 +101,27 @@ const onDeleteShoeSuccess = (res) => {
   $('#message').text('Your shoe has been deleted')
   $('#delete-shoe').trigger('reset')
 }
+const onDeleteShoeReadSuccess = (response) => {
+  const shoes = response.shoes
+  // look through shoes to look at each index
+  const shoesHtml = shoes.map((shoe) => {
+    // create html to display each individual shoe
+    const htmlString = `
+      <li>
+      id: ${shoe._id}
+      brand: ${shoe.brand}
+      model: ${shoe.model}
+      price: ${shoe.price}
+      </li>
+    `
+    return htmlString
+  })
+  // put html in dom tree
+  $('#shoe_list').html(shoesHtml)
+  $('#delete-shoe').show()
+  $('#update-shoe').show()
+  $('#shoe_list').show()
+}
 const onDeleteShoeFailure = () => {
   $('#message').text('Delete shoe was not successful')
 }
@@ -122,5 +143,6 @@ module.exports = {
   onUpdateShoeSuccess,
   onUpdateShoeFailure,
   onDeleteShoeSuccess,
-  onDeleteShoeFailure
+  onDeleteShoeFailure,
+  onDeleteShoeReadSuccess
 }

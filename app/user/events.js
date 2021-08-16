@@ -84,11 +84,11 @@ const onDeleteShoe = function (event) {
   const data = getFormFields(event.target)
   api
     .deleteShoe(data.shoe.id)
-    .then(api.readShoes)
-    .then(ui.onReadShoesSuccess)
-    .catch(ui.onReadShoesFailure)
     .then(ui.onDeleteShoeSuccess)
+    .then($('#shoe_list').empty())
     .catch(ui.onDeleteShoeFailure)
+  api.readShoes()
+    .then(ui.onDeleteShoeReadSuccess)
 }
 // shows form for button that is clicked on
 const showForm = function (event) {
