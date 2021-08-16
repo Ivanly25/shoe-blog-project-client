@@ -77,7 +77,8 @@ const onUpdateShoe = function (event) {
     .then(ui.onUpdateShoeSuccess)
     .catch(ui.onUpdateShoeFailure)
 }
-
+// delete shoe
+// delete then update read shoes list
 const onDeleteShoe = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -85,9 +86,9 @@ const onDeleteShoe = function (event) {
     .deleteShoe(data.shoe.id)
     .then(api.readShoes)
     .then(ui.onReadShoesSuccess)
+    .catch(ui.onReadShoesFailure)
     .then(ui.onDeleteShoeSuccess)
     .catch(ui.onDeleteShoeFailure)
-    // .catch(ui.onReadShoesFailure)
 }
 // shows form for button that is clicked on
 const showForm = function (event) {
